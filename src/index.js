@@ -23,8 +23,7 @@ let mountainDew = new Item();
 let setQuantity = new SetQuantity();
 
 mountainDew.create('Mountain Dew', 3.6)
-setQuantity.update(mountainDew, 2);
 
 const root = document.createElement("div")
-root.innerHTML = `<p>${mountainDew._title} || ${setQuantity._quantity} || $${mountainDew._unitCost} </p>`
+root.innerHTML = `<p>${mountainDew._title} || Quantity || $${mountainDew._unitCost} </p>`
 document.body.appendChild(root)
