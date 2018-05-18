@@ -1,13 +1,11 @@
 'use strict'
 
-var Calculate = require('./calculate.js')
-
 class BasketItem {
-  constructor(item) {
+  constructor(item, calculate) {
     this._item = item;
+    this._calculate = calculate;
     this._quantity = 1;
     this._subTotal = item._unitCost;
-    this._calculate = new Calculate();
   }
 
   updateQuantity(number) {

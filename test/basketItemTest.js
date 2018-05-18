@@ -9,8 +9,7 @@ describe('Basket Item', function() {
   beforeEach(function(){
     calcStub = sinon.createStubInstance(Calculate);
     mountainDew = {_title: 'Mountain Dew', _unitCost: 3.6};
-    firstItem = new BasketItem(mountainDew);
-    // firstItem.create(mountainDew);
+    firstItem = new BasketItem(mountainDew, calcStub);
   })
 
   describe('#new', function() {
@@ -30,8 +29,7 @@ describe('Basket Item', function() {
   describe('#updateSubTotal', function() {
     it('updates the total for the basket item', function() {
       expect(firstItem._subTotal).to.equal(3.6);
-      calcSubTotalStub = sinon.stub(firstItem._calculate, 'subTotal');
-      calcSubTotalReturns = calcSubTotalStub.returns(10.8);
+      calcStub.subTotal.returns(10.8);
       firstItem.updateSubTotal();
       expect(firstItem._subTotal).to.equal(10.8);
     })

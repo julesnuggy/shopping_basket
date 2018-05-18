@@ -16,14 +16,16 @@ import '@styles/styles.scss'
  * This (as it's an image) will end up in the assets/images directory.
  */
 import trump from '@images/trump.jpg'
+import BasketItem from './basketItem.js'
+import Calculate from './calculate.js'
 import Item from './item.js'
-import SetQuantity from './setQuantity.js'
 
 let mountainDew = new Item();
-let setQuantity = new SetQuantity();
-
 mountainDew.create('Mountain Dew', 3.6)
 
+let calculate = new Calculate();
+let firstItem = new BasketItem(mountainDew, calculate)
+
 const root = document.createElement("div")
-root.innerHTML = `<p>${mountainDew._title} || Quantity || $${mountainDew._unitCost} </p>`
+root.innerHTML = `<p>${firstItem._item._title} || ${firstItem._quantity} || $${firstItem._subTotal} </p>`
 document.body.appendChild(root)
