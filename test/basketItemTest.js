@@ -7,20 +7,15 @@ describe('Basket Item', function() {
   let firstItem, mountainDew, sandbox, calcStub, calcSubTotalStub, calcSubTotalReturns
 
   beforeEach(function(){
-    sandbox = sinon.sandbox.create();
     calcStub = sinon.createStubInstance(Calculate);
-    firstItem = new BasketItem();
     mountainDew = {_title: 'Mountain Dew', _unitCost: 3.6};
-    firstItem.create(mountainDew);
+    firstItem = new BasketItem(mountainDew);
+    // firstItem.create(mountainDew);
   })
 
-  // afterEach(function() {
-  //   sandbox.restore();
-  // })
-
-  describe('#create', function() {
+  describe('#new', function() {
     it('generates a new basket item', function() {
-      expect(firstItem._title).to.equal('Mountain Dew');
+      expect(firstItem._item).to.equal(mountainDew);
     })
   })
 
@@ -35,9 +30,9 @@ describe('Basket Item', function() {
   describe('#updateSubTotal', function() {
     it('updates the total for the basket item', function() {
       expect(firstItem._subTotal).to.equal(3.6);
-      calcSubTotalStub = sandbox.stub(firstItem._calculate, 'subTotal');
+      calcSubTotalStub = sinon.stub(firstItem._calculate, 'subTotal');
       calcSubTotalReturns = calcSubTotalStub.returns(10.8);
-      firstItem.updateSubTotal(mountainDew);
+      firstItem.updateSubTotal();
       expect(firstItem._subTotal).to.equal(10.8);
     })
   })

@@ -3,24 +3,20 @@
 var Calculate = require('./calculate.js')
 
 class BasketItem {
-  constructor() {
-    this._title = '';
+  constructor(item) {
+    this._item = item;
     this._quantity = 1;
-    this._subTotal = 0;
+    this._subTotal = item._unitCost;
     this._calculate = new Calculate();
-  }
-
-  create(item) {
-    this._title = item._title;
-    this.updateSubTotal(item);
   }
 
   updateQuantity(number) {
     this._quantity = number;
+    this.updateSubTotal();
   }
 
-  updateSubTotal(item) {
-    this._subTotal = this._calculate.subTotal(this._quantity, item._unitCost);
+  updateSubTotal() {
+    this._subTotal = this._calculate.subTotal(this._quantity, this._item._unitCost);
   }
 }
 
