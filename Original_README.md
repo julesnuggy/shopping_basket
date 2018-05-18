@@ -1,6 +1,17 @@
 # MMT Digital Front-end Test
 
-## Basic User Stories
+Welcome to the MMT Digital Front-end test. This test will hopefully give you a chance to showcase your skills as a developer. The challenge is pretty straightforward - it’s possible to finish this in around two hours. However, we don't mind anything up to 1-2 days (please track how much time you spend working on this).
+
+Once you're done and have committed/pushed your implementation, please email me to let me know you're done (`abbe.s@mmtdigital.co.uk`). After the test, we'll review your work and if you've done well invite you in to talk through your code and decisions. Alright, let's do this!
+
+## The challenge
+
+We would like you to re-create the following basket:
+
+![The basket](https://slack-imgs.com/?c=1&url=https%3A%2F%2Fcdn.dribbble.com%2Fusers%2F42384%2Fscreenshots%2F668649%2Fattachments%2F59014%2Fcart_update_large.png)
+
+Here are some rough user stories for you to work to:
+
 *Basket-001*  
 **As a** user  
 **I want** to view my current basket  

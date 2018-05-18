@@ -1,7 +1,7 @@
 version: '3'
 services:
     express:
-        build: 
+        build:
             context: . 
             dockerfile: Dockerfile
         image: fe_test_image:local
