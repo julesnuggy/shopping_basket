@@ -1,19 +1,20 @@
 describe('Item', function() {
   const expect = require('chai').expect;
-
-  beforeEach(function(){
-    var item = new Item();
-  })
+  const Item = require('../src/item.js');
+  let mountainDew
 
   describe('#create', function() {
+    beforeEach(function() {
+      mountainDew = new Item();
+      mountainDew.create('Mountain Dew', 3.6)
+    })
+
     it('gives the item a title', function() {
-      var mountainDew = item.create('Mountain Dew', 3.6)
-      expect(mountainDew.title).to.equal('Mountain Dew')
+      expect(mountainDew._title).to.equal('Mountain Dew')
     })
 
     it('gives the item a unit cost', function() {
-      var mountainDew = item.create('Mountain Dew', 3.6)
-      expect(mountainDew.unitCost).to.equal(3.6)
+      expect(mountainDew._unitCost).to.equal(3.6)
     })
 
   })
