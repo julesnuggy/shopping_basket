@@ -1,3 +1,5 @@
+'use strict'
+
 class SetQuantity {
   constructor() {
     this._item = null
