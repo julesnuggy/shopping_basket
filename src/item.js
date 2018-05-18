@@ -1,5 +1,5 @@
 'use strict'
-// (function(exports) {
+
 class Item {
   constructor() {
     this._title = '';
@@ -12,6 +12,3 @@ class Item {
   }
 }
 module.exports = Item;
-// exports.Item = Item;
-
-// })(this);
