@@ -15,8 +15,17 @@ describe('Basket Item', function() {
 
   describe('#create', function() {
     it('generates a new basket item', function() {
-      firstItem.create(mountainDew)
-      expect(firstItem._title).to.equal('Mountain Dew')
+      firstItem.create(mountainDew);
+      expect(firstItem._title).to.equal('Mountain Dew');
+    })
+  })
+
+  describe('#updateQuantity', function() {
+    it('updates the quantity of the basket item', function() {
+      firstItem.create(mountainDew);
+      expect(firstItem._quantity).to.equal(1)
+      firstItem.updateQuantity(3);
+      expect(firstItem._quantity).to.equal(3)
     })
   })
 })
