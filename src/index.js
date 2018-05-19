@@ -41,31 +41,36 @@ let thirdSubTotal = document.getElementById('thirdSubTotal');
 let grandTotalAmount = document.getElementById('grandTotalAmount');
 
 sessionStorage.setItem('firstQty', firstItem._quantity);
+sessionStorage.setItem('firstSubTotal', firstItem._subTotal);
 
 firstTitle.innerHTML = `${firstItem._item._title}`;
 firstQty.innerHTML = sessionStorage.getItem('firstQty');
 firstQtyBox.value = firstQty.innerHTML;
-firstSubTotal.innerHTML = `$${firstItem._subTotal}`;
+firstSubTotal.innerHTML = sessionStorage.getItem('firstSubTotal');
 firstSubmit.onclick = function() {
-  secondItem.updateQuantity(firstQtyBox.value, 'firstQty', firstQty);
+  firstItem.updateQuantity(firstQtyBox.value, 'firstQty', 'firstSubTotal', firstQty, firstSubTotal);
 }
 
+sessionStorage.setItem('secondQty', secondItem._quantity);
+sessionStorage.setItem('secondSubTotal', secondItem._subTotal);
 
-sessionStorage.setItem('secondQty', firstItem._quantity);
 secondTitle.innerHTML = `${secondItem._item._title}`;
-secondQty.innerHTML = `${secondItem._quantity}`;
+secondQty.innerHTML = sessionStorage.getItem('secondQty');
 secondQtyBox.value = secondQty.innerHTML;
-secondSubTotal.innerHTML = `$${secondItem._subTotal}`;
+secondSubTotal.innerHTML = sessionStorage.getItem('secondSubTotal');
 secondSubmit.onclick = function() {
-  secondItem.updateQuantity(secondQtyBox.value, 'secondQty', secondQty);
+  secondItem.updateQuantity(secondQtyBox.value, 'secondQty', 'secondSubTotal', secondQty, secondSubTotal);
 }
+
+sessionStorage.setItem('thirdQty', thirdItem._quantity);
+sessionStorage.setItem('thirdSubTotal', thirdItem._subTotal);
 
 thirdTitle.innerHTML = `${thirdItem._item._title}`;
-thirdQty.innerHTML = `${thirdItem._quantity}`;
+thirdQty.innerHTML = sessionStorage.getItem('thirdQty');
 thirdQtyBox.value = thirdQty.innerHTML;
-thirdSubTotal.innerHTML = `$${thirdItem._subTotal}`;
+thirdSubTotal.innerHTML = sessionStorage.getItem('thirdSubTotal');
 thirdSubmit.onclick = function() {
-  thirdItem.updateQuantity(thirdQtyBox.value, 'thirdQty', thirdQty);
+  thirdItem.updateQuantity(thirdQtyBox.value, 'thirdQty', 'thirdSubTotal', thirdQty, thirdSubTotal);
 }
 
 grandTotalAmount.innerHTML = `$${calculate.grandTotal([firstItem._subTotal, secondItem._subTotal, thirdItem._subTotal])}`

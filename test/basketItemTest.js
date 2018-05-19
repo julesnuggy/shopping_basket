@@ -25,7 +25,7 @@ describe('Basket Item', function() {
       global.div = {}
       window.localStorage = global.localStorage
       expect(firstItem._quantity).to.equal(0);
-      firstItem.updateQuantity(3, 'sessVar', global.div);
+      firstItem.updateQuantity(3, 'qty', 'subtotal', global.div);
       expect(firstItem._quantity).to.equal(3);
     })
   })
