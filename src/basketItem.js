@@ -8,11 +8,11 @@ class BasketItem {
     this._subTotal = 0;
   }
 
-  updateQuantity(number) {
-    console.log(number);
+  updateQuantity(number, sessionVariable, htmlElement) {
     this._quantity = number;
     this.updateSubTotal();
-    return this._quantity;
+    sessionStorage.setItem(sessionVariable, number);
+    htmlElement.innerHTML = sessionStorage.getItem(sessionVariable);
   }
 
   updateSubTotal() {
