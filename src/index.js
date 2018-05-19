@@ -21,11 +21,27 @@ import Calculate from './calculate.js'
 import Item from './item.js'
 
 let mountainDew = new Item();
-mountainDew.create('Mountain Dew', 3.6)
+mountainDew.create('Mountain Dew', 3.60)
+
+let desperados = new Item();
+desperados.create('Desperados', 15.50)
+
+let jackDaniels = new Item();
+jackDaniels.create('Jack Daniels', 13.40)
 
 let calculate = new Calculate();
 let firstItem = new BasketItem(mountainDew, calculate)
+let secondItem = new BasketItem(desperados, calculate)
+let thirdItem = new BasketItem(jackDaniels, calculate)
 
-const root = document.createElement("div")
-root.innerHTML = `<p>${firstItem._item._title} || ${firstItem._quantity} || $${firstItem._subTotal} </p>`
-document.body.appendChild(root)
+
+
+let firstRow = document.getElementById('firstItem');
+let secondRow = document.getElementById('secondItem');
+let thirdRow = document.getElementById('thirdItem');
+
+firstRow.innerHTML = `<div>${firstItem._item._title} || ${firstItem._quantity} || $${firstItem._subTotal} </div>`
+
+secondRow.innerHTML = `<div>${secondItem._item._title} || ${secondItem._quantity} || $${secondItem._subTotal} </div>`
+
+thirdRow.innerHTML = `<div>${thirdItem._item._title} || ${thirdItem._quantity} || $${thirdItem._subTotal} </div>`

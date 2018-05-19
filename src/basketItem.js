@@ -4,7 +4,7 @@ class BasketItem {
   constructor(item, calculate) {
     this._item = item;
     this._calculate = calculate;
-    this._quantity = 1;
+    this._quantity = 0;
     this._subTotal = item._unitCost;
   }
 
