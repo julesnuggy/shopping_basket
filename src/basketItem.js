@@ -5,12 +5,14 @@ class BasketItem {
     this._item = item;
     this._calculate = calculate;
     this._quantity = 0;
-    this._subTotal = item._unitCost;
+    this._subTotal = 0;
   }
 
   updateQuantity(number) {
+    console.log(number);
     this._quantity = number;
     this.updateSubTotal();
+    return this._quantity;
   }
 
   updateSubTotal() {
