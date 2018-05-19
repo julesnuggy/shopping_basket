@@ -9,35 +9,46 @@
   <title>MMT Digital FE Test</title>
 </head>
 <body>
-  Welcome to the MMT Digital Front-end Test 👌
+  <h1>Your Basket</h1>
+
   <div id="root">
 
-    <div id="firstItem">
-      <div id="firstTitle">
+    <div id="firstItem" style="display: flex; width: 400px;">
+      <div id="firstTitle" style="flex: 2;">
       </div>
-      <div id="firstQuantity">
+      <div id="firstQuantity" style="flex: 1;">
+        <form>
+          <input id="firstQtyBox" type="text" size="2" maxlength="2"></input>
+        </form>
       </div>
-      <div id="firstSubTotal">
-      </div>
-    </div>
-
-    <div id="secondItem">
-      <div id="secondTitle">
-      </div>
-      <div id="secondQuantity">
-      </div>
-      <div id="secondSubTotal">
+      <div id="firstSubTotal" style="flex: 1;">
       </div>
     </div>
 
-    <div id="thirdItem">
-      <div id="thirdTitle">
+    <div id="secondItem" style="display: flex; width: 400px;">
+      <div id="secondTitle" style="flex: 2;">
       </div>
-      <div id="thirdQuantity">
+      <div id="secondQuantity" style="flex: 1;">
+        <form>
+          <input id="secondQtyBox" type="text" size="2" maxlength="2"></input>
+        </form>
       </div>
-      <div id="thirdSubTotal">
+      <div id="secondSubTotal" style="flex: 1;">
       </div>
     </div>
+
+    <div id="thirdItem" style="display: flex; width: 400px;">
+      <div id="thirdTitle" style="flex: 2;">
+      </div>
+      <div id="thirdQuantity" style="flex: 1;">
+        <form>
+          <input id="thirdQtyBox" type="text" size="2" maxlength="2"></input>
+        </form>
+      </div>
+      <div id="thirdSubTotal" style="flex: 1;">
+      </div>
+    </div>
+
 
   </div>
   <script src='/assets/bundle.js'></script>

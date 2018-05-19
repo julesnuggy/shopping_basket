@@ -34,14 +34,27 @@ let firstItem = new BasketItem(mountainDew, calculate)
 let secondItem = new BasketItem(desperados, calculate)
 let thirdItem = new BasketItem(jackDaniels, calculate)
 
+let firstTitle = document.getElementById('firstTitle');
+let firstQtyBox = document.getElementById('firstQtyBox');
+let firstSubTotal = document.getElementById('firstSubTotal');
+
+let secondTitle = document.getElementById('secondTitle');
+let secondQtyBox = document.getElementById('secondQtyBox');
+let secondSubTotal = document.getElementById('secondSubTotal');
+
+let thirdTitle = document.getElementById('thirdTitle');
+let thirdQtyBox = document.getElementById('thirdQtyBox');
+let thirdSubTotal = document.getElementById('thirdSubTotal');
 
 
-let firstRow = document.getElementById('firstItem');
-let secondRow = document.getElementById('secondItem');
-let thirdRow = document.getElementById('thirdItem');
+firstTitle.innerHTML = `${firstItem._item._title}`
+firstQtyBox.value = `${firstItem._quantity}`
+firstSubTotal.innerHTML = `$${firstItem._subTotal}`
 
-firstRow.innerHTML = `<div>${firstItem._item._title} || ${firstItem._quantity} || $${firstItem._subTotal} </div>`
+secondTitle.innerHTML = `${secondItem._item._title}`
+secondQtyBox.value = `${secondItem._quantity}`
+secondSubTotal.innerHTML = `$${secondItem._subTotal}`
 
-secondRow.innerHTML = `<div>${secondItem._item._title} || ${secondItem._quantity} || $${secondItem._subTotal} </div>`
-
-thirdRow.innerHTML = `<div>${thirdItem._item._title} || ${thirdItem._quantity} || $${thirdItem._subTotal} </div>`
+thirdTitle.innerHTML = `${thirdItem._item._title}`
+thirdQtyBox.value = `${thirdItem._quantity}`
+thirdSubTotal.innerHTML = `$${thirdItem._subTotal}`
