@@ -2,7 +2,13 @@ body {
   font-family: sans-serif;
 }
 
+h1 {
+  text-align: center;
+}
+
 .basket {
+  display: block;
+  margin: auto;
   border: solid 2px dodgerblue;
   border-radius: 5px;
   width: 500px;
@@ -22,12 +28,16 @@ input[type='button'] {
 }
 
 input[type='button']:hover {
-  border: none;
-  border-radius: 2px;
   background-color: #65aac2;
-  color: white;
 }
 
+input[id='clearAllButton']:hover {
+  background-color: #ee586f;
+}
+
+input[id='checkOutButton']:hover {
+  background-color: #3e815d;
+}
 
 .flex_container {
   display: flex;

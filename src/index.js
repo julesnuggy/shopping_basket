@@ -82,6 +82,7 @@ function updateItemValues(item, qtyBoxValue, sessQty, sessQtyEl, sessSubTotal, s
 };
 
 let clearAll = document.getElementById('clearAllButton');
+let checkOut = document.getElementById('checkOutButton');
 
 clearAll.onclick = () => {
   var input = document.getElementsByTagName('input')
@@ -94,3 +95,5 @@ clearAll.onclick = () => {
     }
   }
 }
+
+checkOut.onclick = () => alert(`If I were more complete, I would take you to checkout...`)
