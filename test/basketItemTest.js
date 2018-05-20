@@ -44,7 +44,7 @@ describe('Basket Item', function() {
       global.window = {}
       global.div = {}
       window.localStorage = global.localStorage
-      firstItem.emptyItem(0, 'qty', 'subtotal');
+      firstItem.emptyItem('qty', 'subtotal');
       expect(firstItem._quantity).to.equal(0);
     })
   })

@@ -26,7 +26,7 @@
       <div id="firstQty" class="flex_1"></div>
       <div id="firstQuantity" class="flex_2 center">
         <input id="firstQtyBox" type="text" size="2" maxlength="2"></input>
-        <input id="firstSubmit" type="button" value="Update"></input>
+        <input id="firstQtyUpdate" type="button" value="Update"></input>
       </div>
       <div id="firstSubTotal" class="flex_1">
       </div>
@@ -38,7 +38,7 @@
       <div id="secondQty" class="flex_1"></div>
       <div id="secondQuantity" class="flex_2 center">
         <input id="secondQtyBox" type="text" size="2" maxlength="2"></input>
-        <input id="secondSubmit" type="button" value="Update"></input>
+        <input id="secondQtyUpdate" type="button" value="Update"></input>
       </div>
       <div id="secondSubTotal" class="flex_1">
       </div>
@@ -50,19 +50,33 @@
       <div id="thirdQty" class="flex_1"></div>
       <div id="thirdQuantity" class="flex_2 center">
         <input id="thirdQtyBox" type="text" size="2" maxlength="2"></input>
-        <input id="thirdSubmit" type="button" value="Update"></input>
+        <input id="thirdQtyUpdate" type="button" value="Update"></input>
       </div>
       <div id="thirdSubTotal" class="flex_1">
       </div>
     </div>
 
-    <div id="grandTotal" class="flex_container">
+    <div id="clearAll" class="flex_2 center">
+      <input id="clearAllButton" type="button" value="Clear All"></input>
+    </div>
+
+    <div id="grandTotal" class="flex_container bold ">
       <div id="grandTotalTitle" class="flex_5 center">
         GRAND TOTAL
       </div>
       <div id="grandTotalAmount" class="flex_1">
       </div>
+      <div id="checkOut" class="flex_2 center">
+        <input id="checkOutButton" type="button" value="Check Out"></input>
+      </div>
     </div>
+
+
+
+    <svg id="cross" height="300" width="300">
+      <line x1="0" y1="0" x2="10" y2="10" style="stroke:#000; stroke-width:2" />
+      <line x1="10" y1="0" x2="0" y2="10" style="stroke:#000; stroke-width:2" />
+    </svg>
 
   </div>
   <script src='/assets/bundle.js'></script>

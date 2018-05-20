@@ -20,10 +20,7 @@ class BasketItem {
   }
 
   emptyItem(sessionQty, sessionSubTotal) {
-    this._quantity = 0;
-    this.updateSubTotal();
-    sessionStorage.setItem(sessionQty, this._quantity);
-    sessionStorage.setItem(sessionSubTotal, this._subTotal);
+    this.updateQuantity(0)
   }
 }
 
