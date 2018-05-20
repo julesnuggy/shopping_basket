@@ -13,47 +13,54 @@
 
   <div id="root">
 
-    <div id="firstItem" style="display: flex; width: 500px;">
-      <div id="firstTitle" style="flex: 2;">
+    <div id="itemHeader" class="flex_container center bold">
+      <div id="itemTitle" class="flex_2">Item</div>
+      <div id="itemQty" class="flex_1">Quantity</div>
+      <div id="itemUpdate" class="flex_2">Update Quantity</div>
+      <div id="itemSubTotal" class="flex_1">Sub-Total</div>
+    </div>
+
+    <div id="firstItem" class="flex_container">
+      <div id="firstTitle" class="flex_2">
       </div>
-      <div id="firstQty"  style="flex: 1;"></div>
-      <div id="firstQuantity" style="flex: 2;">
+      <div id="firstQty" class="flex_1"></div>
+      <div id="firstQuantity" class="flex_2 center">
         <input id="firstQtyBox" type="text" size="2" maxlength="2"></input>
         <input id="firstSubmit" type="button" value="Update"></input>
       </div>
-      <div id="firstSubTotal" style="flex: 1;">
+      <div id="firstSubTotal" class="flex_1">
       </div>
     </div>
 
-    <div id="secondItem" style="display: flex; width: 500px;">
-      <div id="secondTitle" style="flex: 2;">
+    <div id="secondItem" class="flex_container">
+      <div id="secondTitle" class="flex_2">
       </div>
-      <div id="secondQty"  style="flex: 1;"></div>
-      <div id="secondQuantity" style="flex: 2;">
+      <div id="secondQty" class="flex_1"></div>
+      <div id="secondQuantity" class="flex_2 center">
         <input id="secondQtyBox" type="text" size="2" maxlength="2"></input>
         <input id="secondSubmit" type="button" value="Update"></input>
       </div>
-      <div id="secondSubTotal" style="flex: 1;">
+      <div id="secondSubTotal" class="flex_1">
       </div>
     </div>
 
-    <div id="thirdItem" style="display: flex; width: 500px;">
-      <div id="thirdTitle" style="flex: 2;">
+    <div id="thirdItem" class="flex_container">
+      <div id="thirdTitle" class="flex_2">
       </div>
-      <div id="thirdQty"  style="flex: 1;"></div>
-      <div id="thirdQuantity" style="flex: 2;">
+      <div id="thirdQty" class="flex_1"></div>
+      <div id="thirdQuantity" class="flex_2 center">
         <input id="thirdQtyBox" type="text" size="2" maxlength="2"></input>
         <input id="thirdSubmit" type="button" value="Update"></input>
       </div>
-      <div id="thirdSubTotal" style="flex: 1;">
+      <div id="thirdSubTotal" class="flex_1">
       </div>
     </div>
 
-    <div id="grandTotal" style="display: flex; width: 500px;">
-      <div id="grandTotalTitle" style="flex: 5;">
+    <div id="grandTotal" class="flex_container">
+      <div id="grandTotalTitle" class="flex_5 center">
         Grand Total
       </div>
-      <div id="grandTotalAmount" style="flex: 1;">
+      <div id="grandTotalAmount" class="flex_1">
       </div>
     </div>
 

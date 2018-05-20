@@ -41,6 +41,7 @@ let thirdSubmit = document.getElementById('thirdSubmit');
 let thirdSubTotal = document.getElementById('thirdSubTotal');
 
 let grandTotalAmount = document.getElementById('grandTotalAmount');
+grandTotalAmount.innerHTML = calculate.grandTotal(items_array);
 
 sessionStorage.setItem('firstQty', firstItem._quantity);
 sessionStorage.setItem('firstSubTotal', firstItem._subTotal);
