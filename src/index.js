@@ -20,6 +20,8 @@ let firstItem = new BasketItem(mountainDew, calculate);
 let secondItem = new BasketItem(desperados, calculate);
 let thirdItem = new BasketItem(jackDaniels, calculate);
 
+let items_array = [firstItem, secondItem, thirdItem];
+
 let firstTitle = document.getElementById('firstTitle');
 let firstQty = document.getElementById('firstQty');
 let firstQtyBox = document.getElementById('firstQtyBox');
@@ -47,11 +49,7 @@ firstTitle.innerHTML = `${firstItem._item._title}`;
 firstQty.innerHTML = sessionStorage.getItem('firstQty');
 firstQtyBox.value = firstQty.innerHTML;
 firstSubTotal.innerHTML = sessionStorage.getItem('firstSubTotal');
-firstSubmit.onclick = function() {
-  var updateObj = firstItem.updateQuantity(firstQtyBox.value, 'firstQty', 'firstSubTotal');
-  firstQty.innerHTML = sessionStorage.getItem('firstQty');
-  firstSubTotal.innerHTML = sessionStorage.getItem('firstSubTotal');;
-}
+firstSubmit.onclick = () => updateAll(firstItem, firstQtyBox.value, 'firstQty', firstQty, 'firstSubTotal', firstSubTotal);
 
 sessionStorage.setItem('secondQty', secondItem._quantity);
 sessionStorage.setItem('secondSubTotal', secondItem._subTotal);
@@ -60,11 +58,7 @@ secondTitle.innerHTML = `${secondItem._item._title}`;
 secondQty.innerHTML = sessionStorage.getItem('secondQty');
 secondQtyBox.value = secondQty.innerHTML;
 secondSubTotal.innerHTML = sessionStorage.getItem('secondSubTotal');
-secondSubmit.onclick = function() {
-  var updateObj = secondItem.updateQuantity(secondQtyBox.value, 'secondQty', 'secondSubTotal');
-  secondQty.innerHTML = sessionStorage.getItem('secondQty');
-  secondSubTotal.innerHTML = sessionStorage.getItem('secondSubTotal');
-}
+secondSubmit.onclick = () => updateAll(secondItem, secondQtyBox.value, 'secondQty', secondQty, 'secondSubTotal', secondSubTotal);
 
 sessionStorage.setItem('thirdQty', thirdItem._quantity);
 sessionStorage.setItem('thirdSubTotal', thirdItem._subTotal);
@@ -73,10 +67,11 @@ thirdTitle.innerHTML = `${thirdItem._item._title}`;
 thirdQty.innerHTML = sessionStorage.getItem('thirdQty');
 thirdQtyBox.value = thirdQty.innerHTML;
 thirdSubTotal.innerHTML = sessionStorage.getItem('thirdSubTotal');
-thirdSubmit.onclick = function() {
-  var updateObj = thirdItem.updateQuantity(thirdQtyBox.value, 'thirdQty', 'thirdSubTotal');
-  thirdQty.innerHTML = sessionStorage.getItem('thirdQty');
-  thirdSubTotal.innerHTML = sessionStorage.getItem('thirdSubTotal');
-}
+thirdSubmit.onclick = () => updateAll(thirdItem, thirdQtyBox.value, 'thirdQty', thirdQty, 'thirdSubTotal', thirdSubTotal);
 
-grandTotalAmount.innerHTML = `$${calculate.grandTotal([firstItem._subTotal, secondItem._subTotal, thirdItem._subTotal])}`
+function updateAll(item, qtyBoxValue, sessQty, sessQtyEl, sessSubTotal, sessSubTotalEl) {
+  item.updateQuantity(qtyBoxValue, sessQty, sessSubTotal);
+  sessQtyEl.innerHTML = sessionStorage.getItem(sessQty);
+  sessSubTotalEl.innerHTML = sessionStorage.getItem(sessSubTotal);
+  grandTotalAmount.innerHTML = calculate.grandTotal(items_array);
+};

@@ -3,7 +3,6 @@
 class Calculate {
   constructor() {
     this._subTotalCost = 0;
-    this._grandTotalCost = 0;
   }
 
   subTotal(quantity, unitCost) {
@@ -12,6 +11,7 @@ class Calculate {
   }
 
   grandTotal(objects) {
+    this._grandTotalCost = 0;
     var i;
     for (i = 0; i < objects.length; i++) {
       this._grandTotalCost += objects[i]._subTotal;
