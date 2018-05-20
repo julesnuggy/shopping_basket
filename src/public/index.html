@@ -11,7 +11,7 @@
 <body>
   <h1>Your Basket</h1>
 
-  <div id="root">
+  <div id="root" class="basket">
 
     <div id="itemHeader" class="flex_container center bold">
       <div id="itemTitle" class="flex_2">Item</div>
@@ -56,27 +56,25 @@
       </div>
     </div>
 
-    <div id="clearAll" class="flex_2 center">
-      <input id="clearAllButton" type="button" value="Clear All"></input>
+    <div id="clearContainer" class="flex_container">
+      <div id="emptyDiv" class="flex_2"></div>
+      <div id="emptyDiv" class="flex_1"></div>
+      <div id="clearAll" class="flex_2 center">
+        <input id="clearAllButton" type="button" value="Clear All"></input>
+      </div>
+      <div id="emptyDiv" class="flex_1"></div>
     </div>
 
     <div id="grandTotal" class="flex_container bold ">
-      <div id="grandTotalTitle" class="flex_5 center">
+      <div id="grandTotalTitle" class="flex_3 center">
         GRAND TOTAL
       </div>
       <div id="grandTotalAmount" class="flex_1">
       </div>
-      <div id="checkOut" class="flex_2 center">
+      <div id="checkOut" class="flex_1 center">
         <input id="checkOutButton" type="button" value="Check Out"></input>
       </div>
     </div>
-
-
-
-    <svg id="cross" height="300" width="300">
-      <line x1="0" y1="0" x2="10" y2="10" style="stroke:#000; stroke-width:2" />
-      <line x1="10" y1="0" x2="0" y2="10" style="stroke:#000; stroke-width:2" />
-    </svg>
 
   </div>
   <script src='/assets/bundle.js'></script>
