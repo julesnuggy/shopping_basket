@@ -20,7 +20,7 @@ The app allows you to update the quantities of the items in the basket, and will
 5. Only once the MVP had been reached was CSS applied thoroughly to the app.
 
 ## Installing
-1. Clone this repo `git clone https://julesnuggy@bitbucket.org/mmtdigital/fe-test-makers-academy-julian-ng.git`
+1. Clone this repo `git clone https://github.com/julesnuggy/shopping_basket.git`
 2. Install [Docker](https://www.docker.com/community-edition)
 3. Install [Node.js](https://nodejs.org/en)
 4. Install docker-compose: `npm install docker-compose`
