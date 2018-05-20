@@ -27,6 +27,7 @@ The app allows you to update the quantities of the items in the basket, and will
 5. Run `docker-compose build`
 6. Run `docker-compose up`
 7. Open http://localhost:8080
+8. If this doesn't work (e.g. you get an error about the container already being used) then: run `npm install` -> `npm start` -> open  http://localhost:8080
 
 ## Testing
 1. Run `npm test` in your Terminal
