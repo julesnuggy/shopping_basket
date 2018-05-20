@@ -11,12 +11,18 @@ class Calculate {
     return this._subTotalCost;
   }
 
-  grandTotal(arrayOfCosts) {
+  grandTotal(objects) {
     var i;
-    for (i = 0; i < arrayOfCosts.length; i++) {
-      this._grandTotalCost += arrayOfCosts[i];
+    for (i = 0; i < objects.length; i++) {
+      this._grandTotalCost += objects[i]._subTotal;
     }
     return this._grandTotalCost;
   }
+
+  calculateAll(quantity, unitCost, objects) {
+    this.subTotal(quantity, unitCost);
+    this.grandTotal(objects);
+  }
+
 }
 module.exports = Calculate;

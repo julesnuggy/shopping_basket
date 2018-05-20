@@ -8,13 +8,11 @@ class BasketItem {
     this._subTotal = 0;
   }
 
-  updateQuantity(number, sessionQty, sessionSubTotal, qtyHtmlEl, subTotalHtmlEl) {
+  updateQuantity(number, sessionQty, sessionSubTotal) {
     this._quantity = number;
     this.updateSubTotal();
-    sessionStorage.setItem(sessionQty, number);
-    qtyHtmlEl.innerHTML = sessionStorage.getItem(sessionQty);
+    sessionStorage.setItem(sessionQty, this._quantity);
     sessionStorage.setItem(sessionSubTotal, this._subTotal);
-    subTotalHtmlEl.innerHTML = sessionStorage.getItem(sessionSubTotal);
   }
 
   updateSubTotal() {

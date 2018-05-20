@@ -48,7 +48,9 @@ firstQty.innerHTML = sessionStorage.getItem('firstQty');
 firstQtyBox.value = firstQty.innerHTML;
 firstSubTotal.innerHTML = sessionStorage.getItem('firstSubTotal');
 firstSubmit.onclick = function() {
-  firstItem.updateQuantity(firstQtyBox.value, 'firstQty', 'firstSubTotal', firstQty, firstSubTotal);
+  var updateObj = firstItem.updateQuantity(firstQtyBox.value, 'firstQty', 'firstSubTotal');
+  firstQty.innerHTML = sessionStorage.getItem('firstQty');
+  firstSubTotal.innerHTML = sessionStorage.getItem('firstSubTotal');;
 }
 
 sessionStorage.setItem('secondQty', secondItem._quantity);
@@ -59,7 +61,9 @@ secondQty.innerHTML = sessionStorage.getItem('secondQty');
 secondQtyBox.value = secondQty.innerHTML;
 secondSubTotal.innerHTML = sessionStorage.getItem('secondSubTotal');
 secondSubmit.onclick = function() {
-  secondItem.updateQuantity(secondQtyBox.value, 'secondQty', 'secondSubTotal', secondQty, secondSubTotal);
+  var updateObj = secondItem.updateQuantity(secondQtyBox.value, 'secondQty', 'secondSubTotal');
+  secondQty.innerHTML = sessionStorage.getItem('secondQty');
+  secondSubTotal.innerHTML = sessionStorage.getItem('secondSubTotal');
 }
 
 sessionStorage.setItem('thirdQty', thirdItem._quantity);
@@ -70,7 +74,9 @@ thirdQty.innerHTML = sessionStorage.getItem('thirdQty');
 thirdQtyBox.value = thirdQty.innerHTML;
 thirdSubTotal.innerHTML = sessionStorage.getItem('thirdSubTotal');
 thirdSubmit.onclick = function() {
-  thirdItem.updateQuantity(thirdQtyBox.value, 'thirdQty', 'thirdSubTotal', thirdQty, thirdSubTotal);
+  var updateObj = thirdItem.updateQuantity(thirdQtyBox.value, 'thirdQty', 'thirdSubTotal');
+  thirdQty.innerHTML = sessionStorage.getItem('thirdQty');
+  thirdSubTotal.innerHTML = sessionStorage.getItem('thirdSubTotal');
 }
 
 grandTotalAmount.innerHTML = `$${calculate.grandTotal([firstItem._subTotal, secondItem._subTotal, thirdItem._subTotal])}`
