@@ -1,4 +1,4 @@
-describe('Basket Item', function() {
+describe('Basket Item', () => {
   const expect = require('chai').expect;
   const sinon = require('sinon');
   const localStorage = require('mock-local-storage')
@@ -7,23 +7,26 @@ describe('Basket Item', function() {
   const Formatter = require('../src/formatter.js')
 
   let firstItem, mountainDew, sandbox, calcStub, calcSubTotalStub,
-      calcSubTotalReturns, formatterStub
+    calcSubTotalReturns, formatterStub
 
-  beforeEach(function(){
+  beforeEach(() => {
     calcStub = sinon.createStubInstance(Calculate);
     formatterStub = sinon.createStubInstance(Formatter);
-    mountainDew = {_title: 'Mountain Dew', _unitCost: 3.6};
+    mountainDew = {
+      _title: 'Mountain Dew',
+      _unitCost: 3.6
+    };
     firstItem = new BasketItem(mountainDew, calcStub, formatterStub);
   })
 
-  describe('#new', function() {
-    it('generates a new basket item', function() {
+  describe('#new', () => {
+    it('generates a new basket item', () => {
       expect(firstItem._item).to.equal(mountainDew);
     })
   })
 
-  describe('#updateQuantity', function() {
-    it('updates the quantity of the basket item', function() {
+  describe('#updateQuantity', () => {
+    it('updates the quantity of the basket item', () => {
       global.window = {}
       global.div = {}
       window.localStorage = global.localStorage
@@ -34,8 +37,8 @@ describe('Basket Item', function() {
     })
   })
 
-  describe('#updateSubTotal', function() {
-    it('updates the total for the basket item', function() {
+  describe('#updateSubTotal', () => {
+    it('updates the total for the basket item', () => {
       expect(firstItem._subTotal).to.equal(0);
       calcStub.subTotal.returns(10.8);
       firstItem.updateSubTotal();
@@ -43,8 +46,8 @@ describe('Basket Item', function() {
     })
   })
 
-  describe('#emptyItem', function() {
-    it('sets the quantity of the basket item to 0', function() {
+  describe('#emptyItem', () => {
+    it('sets the quantity of the basket item to 0', () => {
       global.window = {}
       global.div = {}
       window.localStorage = global.localStorage

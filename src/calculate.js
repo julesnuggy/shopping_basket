@@ -6,7 +6,7 @@ class Calculate {
   }
 
   subTotal(quantity, unitCost) {
-    this._subTotalCost =  quantity * unitCost;
+    this._subTotalCost = quantity * unitCost;
     return this._subTotalCost;
   }
 
@@ -18,6 +18,6 @@ class Calculate {
     }
     return this._grandTotalCost;
   }
-
 }
+
 module.exports = Calculate;

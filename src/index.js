@@ -87,10 +87,10 @@ let checkOut = document.getElementById('checkOutButton');
 clearAll.onclick = () => {
   var input = document.getElementsByTagName('input')
   var i;
-  for (i = 0; i<input.length; i++) {
+  for (i = 0; i < input.length; i++) {
     if (input[i].type === "text") {
       input[i].value = 0;
-    } else if (input[i].type === "button") {
+    } else if (input[i].id !== "checkOutButton") {
       input[i].click();
     }
   }

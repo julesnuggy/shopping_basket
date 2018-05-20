@@ -1,122 +1,39 @@
-# MMT Digital Front-end Test
+# Shopping Basket
 
-## Basic User Stories
-*Basket-001*  
-**As a** user  
-**I want** to view my current basket  
-**So that** I can see what I've added  
+## Introduction
+This is a shopping basket created as part of a tech test. It has been made using JavaScript & Node.js without jQuery.
 
-**Given** I am on the basket page  
-**When** I view the page  
-**Then** I can see all added items and their cost  
+The app allows you to update the quantities of the items in the basket, and will automatically re-calculate the sub-totals and grand total costs.
 
-*Basket-002*  
-**As a** user  
-**I want** to change the quantity of a basket item  
-**So that** I can decide item totals before purchasing  
+## Screenshots
+### Initial Display
+![shopping_basket_initial](./shopping_basket_initial.png)
 
-**Given** I am on the basket page  
-**When** I view the page  
-**Then** I can see an item quantity next to each item  
+## Updated Quantities
+![shopping_basket_updated](./shopping_basket_updated.png)
 
-**Given** I am on the basket page  
-**When** I view the page  
-**Then** I can see each item's total cost (adjusted for quantity)  
+## Approach
+1. Diagramming and domain modelling was first done to plan the layout of the code and its features.
+2. I decided that the MVP should be all the features as outlined in the User Stories originally provided.
+3. A Test Driven Development approach (Red, Green, Refactor) was followed throughout to produce the app, which allowed for a feature by feature implementation. The Mocha, Chai and Sinon frameworks/libraries were used for this.
+4. As a result, this also allowed for SOLID and DRY principles to be followed throughout, although this could be improved in some areas.
+5. Only once the MVP had been reached was CSS applied thoroughly to the app.
 
-**Given** I am on the basket page  
-**When** I change an item quantity  
-**Then** the item's total cost is adjusted, in real-time  
+## Installing
+1. Clone this repo `git clone https://julesnuggy@bitbucket.org/mmtdigital/fe-test-makers-academy-julian-ng.git`
+2. Install [Docker](https://www.docker.com/community-edition)
+3. Install [Node.js](https://nodejs.org/en)
+4. Install docker-compose: `npm install docker-compose`
+5. Run `docker-compose build`
+6. Run `docker-compose up`
+7. Open http://localhost:8080
 
-*Basket-003*  
-**As a** user  
-**I want** to view my current basket total  
-**So that** I can see what I'm going to have to pay  
+## Testing
+1. Run `npm test` in your Terminal
 
-**Given** I am on the basket page  
-**When** I view the page  
-**Then** I can see a total cost, accounting for all items and quantities  
+![unit_tests](./shopping_basket_unit_tests.png)
 
-*Basket-004*  
-**As a** user  
-**I want** to remove all items from my basket  
-**So that** I can start over  
-
-**Given** I am on the basket page  
-**When** I click the "clear" button  
-**Then** all items are reset to zero (but remain in the basket)  
-
-## Things we love
-
-* Non-jquery implementations
-* Tip-top styling, using mixins and modern techniques
-* Well linted, consistent code
-* A fully working non-perfect solution, over a beautiful broken one
-* Frequent Git use with clear commit messages
-
-## Bonus points
-
-* Accessibility considerations
-* Unit testing
-* Progressive enhancement considerations
-* Next gen JavaScript, ES6+
-
-## Getting started
-
-The easiest way to start the project is using Docker. You can install it here, if you don't already have it: https://www.docker.com/community-edition.
-
-* `docker-compose build`
-* `docker-compose up`
-* Open up a browser and browse to http://localhost:8080
-
-If you don't want to use Docker or have a particularly old machine (pre-2010 Mac or pre-Windows 10 PC), you can manually run the project:
-
-* Install Node, if you don't have it: https://nodejs.org/en
-* `npm install`
-* `npm start`
-* Open up a browser and browse to http://localhost:8080
-
-## Available Tech
-
-The project is compiled with webpack, and out the box, you should be able to use:
-
-* SCSS
-* ES6+
-* SVG icons
-* React
-* jQuery (we recommend not using this, but it's available as a last resort)
-
-If you would like to use another technology, such as Angular, feel free to tweak the config to allow it. Just remember that we are more interested in seeing a working solution at the end of the test.
-
-Note: Any variables or mixins you define globally should also be available throughout your styles. You can thank webpack's magic for that :)
-
-## FAQs
-
-#### Am I allowed to Google stuff
-It goes without saying. Please work as you normally would during the day.
-
-
-#### My js/styles/html doesn't seem to update
-Often it's the caching in the browser. Try hard refreshing the browser. In Chrome, open the dev tools, right click on the refresh button and select *Empty Cache and Hard Reload*
-
-
-#### Something is not working in the build
-Try to find a way to fix it, but if you're really stuck - contact the person that set up the test for you.
-
-
-#### Shall I create branches?
-If you normally work with feature branches, we would love to see usage of them. No worries if not.
-
-
-#### I'm finished early, what now?
-
-Firstly, great work. Here are some enhancements:
-
-* Add VAT calculations
-* Add currency choice and conversion rates
-* Add a payment step
-* Add another theme
-* Add a product detail modal for each item
-* Find a live API and pull the item's content and title from that
-* Incorporate markdown to enable easier content editing
-* Optimise for ultimate performance
-* Incorporate PWA techniques
+## If I Had More Time
+1. Feature testing udsing Zombie
+2. DRYing out in index.js as there is a lot of repetition in the updating of the HTML element values. Another class could be created for this.
+3. Properly implement constraints for the item quantities (remove leading zeroes, prevent invalid entries, etc.)

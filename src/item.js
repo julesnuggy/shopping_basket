@@ -11,4 +11,5 @@ class Item {
     this._unitCost = unitCost;
   }
 }
+
 module.exports = Item;
