@@ -10,7 +10,6 @@ import style from './loader-configs/style'
 import font from './loader-configs/font'
 import html from './loader-configs/html'
 import image from './loader-configs/image'
-import favicon from './loader-configs/favicon'
 
 const root = process.cwd()
 
@@ -32,7 +31,6 @@ export default {
       font,
       html,
       image,
-      favicon
     ]
   },
 

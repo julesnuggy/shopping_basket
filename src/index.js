@@ -1,4 +1,3 @@
-import '@assets/favicon.ico'
 import '@styles/styles.scss'
 
 import BasketItem from './basketItem.js'
