@@ -1,9 +1,10 @@
 'use strict'
 
 class BasketItem {
-  constructor(item, calculate) {
+  constructor(item, calculate, formatter) {
     this._item = item;
     this._calculate = calculate;
+    this._formatter = formatter;
     this._quantity = 0;
     this._subTotal = 0;
   }
@@ -12,7 +13,8 @@ class BasketItem {
     this._quantity = number;
     this.updateSubTotal();
     sessionStorage.setItem(sessionQty, this._quantity);
-    sessionStorage.setItem(sessionSubTotal, this._subTotal);
+    var convertedSubTotal = this._formatter.convertToCurrency(this._subTotal)
+    sessionStorage.setItem(sessionSubTotal, convertedSubTotal);
   }
 
   updateSubTotal() {

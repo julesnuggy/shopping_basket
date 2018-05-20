@@ -4,8 +4,10 @@ import '@styles/styles.scss'
 import BasketItem from './basketItem.js'
 import Calculate from './calculate.js'
 import Item from './item.js'
+import Formatter from './formatter.js'
 
 let calculate = new Calculate();
+let formatter = new Formatter();
 
 let mountainDew = new Item();
 mountainDew.create('Mountain Dew', 3.60)
@@ -16,9 +18,9 @@ desperados.create('Desperados', 15.50)
 let jackDaniels = new Item();
 jackDaniels.create('Jack Daniels', 13.40)
 
-let firstItem = new BasketItem(mountainDew, calculate);
-let secondItem = new BasketItem(desperados, calculate);
-let thirdItem = new BasketItem(jackDaniels, calculate);
+let firstItem = new BasketItem(mountainDew, calculate, formatter);
+let secondItem = new BasketItem(desperados, calculate, formatter);
+let thirdItem = new BasketItem(jackDaniels, calculate, formatter);
 
 let items_array = [firstItem, secondItem, thirdItem];
 
@@ -41,10 +43,10 @@ let thirdQtyUpdate = document.getElementById('thirdQtyUpdate');
 let thirdSubTotal = document.getElementById('thirdSubTotal');
 
 let grandTotalAmount = document.getElementById('grandTotalAmount');
-grandTotalAmount.innerHTML = calculate.grandTotal(items_array);
+grandTotalAmount.innerHTML = formatter.convertToCurrency(calculate.grandTotal(items_array));
 
 sessionStorage.setItem('firstQty', firstItem._quantity);
-sessionStorage.setItem('firstSubTotal', firstItem._subTotal);
+sessionStorage.setItem('firstSubTotal', formatter.convertToCurrency(firstItem._subTotal));
 
 firstTitle.innerHTML = `${firstItem._item._title}`;
 firstQty.innerHTML = sessionStorage.getItem('firstQty');
@@ -53,16 +55,18 @@ firstSubTotal.innerHTML = sessionStorage.getItem('firstSubTotal');
 firstQtyUpdate.onclick = () => updateItemValues(firstItem, firstQtyBox.value, 'firstQty', firstQty, 'firstSubTotal', firstSubTotal);
 
 sessionStorage.setItem('secondQty', secondItem._quantity);
-sessionStorage.setItem('secondSubTotal', secondItem._subTotal);
+sessionStorage.setItem('secondSubTotal', formatter.convertToCurrency(secondItem._subTotal));
 
 secondTitle.innerHTML = `${secondItem._item._title}`;
 secondQty.innerHTML = sessionStorage.getItem('secondQty');
 secondQtyBox.value = secondQty.innerHTML;
 secondSubTotal.innerHTML = sessionStorage.getItem('secondSubTotal');
-secondQtyUpdate.onclick = () => updateItemValues(secondItem, secondQtyBox.value, 'secondQty', secondQty, 'secondSubTotal', secondSubTotal);
+secondQtyUpdate.onclick = () => {
+  updateItemValues(secondItem, secondQtyBox.value, 'secondQty', secondQty, 'secondSubTotal', secondSubTotal);
+}
 
 sessionStorage.setItem('thirdQty', thirdItem._quantity);
-sessionStorage.setItem('thirdSubTotal', thirdItem._subTotal);
+sessionStorage.setItem('thirdSubTotal', formatter.convertToCurrency(thirdItem._subTotal));
 
 thirdTitle.innerHTML = `${thirdItem._item._title}`;
 thirdQty.innerHTML = sessionStorage.getItem('thirdQty');
@@ -74,10 +78,11 @@ function updateItemValues(item, qtyBoxValue, sessQty, sessQtyEl, sessSubTotal, s
   item.updateQuantity(qtyBoxValue, sessQty, sessSubTotal);
   sessQtyEl.innerHTML = sessionStorage.getItem(sessQty);
   sessSubTotalEl.innerHTML = sessionStorage.getItem(sessSubTotal);
-  grandTotalAmount.innerHTML = calculate.grandTotal(items_array);
+  grandTotalAmount.innerHTML = formatter.convertToCurrency(calculate.grandTotal(items_array));
 };
 
 let clearAll = document.getElementById('clearAllButton');
+
 clearAll.onclick = () => {
   var input = document.getElementsByTagName('input')
   var i;

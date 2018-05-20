@@ -4,13 +4,16 @@ describe('Basket Item', function() {
   const localStorage = require('mock-local-storage')
   const BasketItem = require('../src/basketItem.js');
   const Calculate = require('../src/calculate.js')
+  const Formatter = require('../src/formatter.js')
 
-  let firstItem, mountainDew, sandbox, calcStub, calcSubTotalStub, calcSubTotalReturns
+  let firstItem, mountainDew, sandbox, calcStub, calcSubTotalStub,
+      calcSubTotalReturns, formatterStub
 
   beforeEach(function(){
     calcStub = sinon.createStubInstance(Calculate);
+    formatterStub = sinon.createStubInstance(Formatter);
     mountainDew = {_title: 'Mountain Dew', _unitCost: 3.6};
-    firstItem = new BasketItem(mountainDew, calcStub);
+    firstItem = new BasketItem(mountainDew, calcStub, formatterStub);
   })
 
   describe('#new', function() {
@@ -25,6 +28,7 @@ describe('Basket Item', function() {
       global.div = {}
       window.localStorage = global.localStorage
       expect(firstItem._quantity).to.equal(0);
+      formatterStub.convertToCurrency.returns('£3.00');
       firstItem.updateQuantity(3, 'qty', 'subtotal');
       expect(firstItem._quantity).to.equal(3);
     })
