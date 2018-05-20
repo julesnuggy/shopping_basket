@@ -25,7 +25,7 @@ describe('Basket Item', function() {
       global.div = {}
       window.localStorage = global.localStorage
       expect(firstItem._quantity).to.equal(0);
-      firstItem.updateQuantity(3, 'qty', 'subtotal', global.div);
+      firstItem.updateQuantity(3, 'qty', 'subtotal');
       expect(firstItem._quantity).to.equal(3);
     })
   })
@@ -36,6 +36,16 @@ describe('Basket Item', function() {
       calcStub.subTotal.returns(10.8);
       firstItem.updateSubTotal();
       expect(firstItem._subTotal).to.equal(10.8);
+    })
+  })
+
+  describe('#emptyItem', function() {
+    it('sets the quantity of the basket item to 0', function() {
+      global.window = {}
+      global.div = {}
+      window.localStorage = global.localStorage
+      firstItem.emptyItem(0, 'qty', 'subtotal');
+      expect(firstItem._quantity).to.equal(0);
     })
   })
 })

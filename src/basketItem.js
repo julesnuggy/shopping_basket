@@ -18,6 +18,13 @@ class BasketItem {
   updateSubTotal() {
     this._subTotal = this._calculate.subTotal(this._quantity, this._item._unitCost);
   }
+
+  emptyItem(sessionQty, sessionSubTotal) {
+    this._quantity = 0;
+    this.updateSubTotal();
+    sessionStorage.setItem(sessionQty, this._quantity);
+    sessionStorage.setItem(sessionSubTotal, this._subTotal);
+  }
 }
 
 module.exports = BasketItem;

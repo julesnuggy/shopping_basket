@@ -15,7 +15,8 @@ describe('Calculate', function() {
 
   describe('#grandTotal', function() {
     it('returns the grand-total cost for the basket', function() {
-      let result = calculate.grandTotal([7.2, 8.8, 10.4]);
+      let items_array = [{_subTotal: 7.2}, {_subTotal: 8.8}, {_subTotal: 10.4}];
+      let result = calculate.grandTotal(items_array);
       expect(result).to.equal(26.4);
     })
   })

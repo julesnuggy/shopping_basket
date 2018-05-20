@@ -19,10 +19,5 @@ class Calculate {
     return this._grandTotalCost;
   }
 
-  calculateAll(quantity, unitCost, objects) {
-    this.subTotal(quantity, unitCost);
-    this.grandTotal(objects);
-  }
-
 }
 module.exports = Calculate;
